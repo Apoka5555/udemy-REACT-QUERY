@@ -53,7 +53,7 @@ export function useUser(): UseUser {
   function clearUser() {
     queryClient.setQueryData([queryKeys.user], null);
     setStoredUser(null);
-    queryClient.removeQueries(['user-appointments']);
+    queryClient.removeQueries([queryKeys.appointments, queryKeys.user]);
   }
 
   return { user, updateUser, clearUser };
