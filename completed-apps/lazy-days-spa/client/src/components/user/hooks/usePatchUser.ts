@@ -72,9 +72,10 @@ export function usePatchUser(): UseMutateFunction<
         }
       },
       onSuccess: (userData: User | null) => {
-        if (user) {
+        if (userData) {
+          updateUser(userData);
           toast({
-            title: 'User updated!',
+            title: 'User updated',
             status: 'success',
           });
         }
